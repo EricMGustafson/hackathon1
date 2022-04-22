@@ -2,6 +2,7 @@ import { Auth0Provider } from '@bcwdev/auth0provider'
 import BaseController from '../utils/BaseController.js'
 import { postsService } from '../services/PostsService.js'
 import { commentsService } from '../services/CommentsService.js'
+import { votesService } from "../services/VotesService.js"
 
 export class PostsController extends BaseController {
   constructor() {
@@ -46,7 +47,8 @@ export class PostsController extends BaseController {
 
   async getAllVotesByPost(req, res, next) {
     try {
-      const postVotes = await votesService.getAllVotesByPost
+      const postVotes = await votesService.getAllVotesByPost(req.params.id)
+      return res.send(postVotes)
     } catch (error) {
       next(error)
     }
