@@ -1,21 +1,14 @@
 import { dev } from './env.js'
 import { EventEmitter } from './Utils/EventEmitter.js'
 import { isValidProp } from './Utils/isValidProp.js'
-import { Post } from './Models/Post.js'
 
 class AppState extends EventEmitter {
   user = {}
   account = {}
   /** @type {import('./Models/Post').Post[]} */
-  posts = [
-    new Post({
-      title: 'GET OFF MY LAWN!!!!1!!',
-      body: 'MY GRASS IS CUT TO 5 INCHES AND THESE BIKES AND KIDS RUIN IT DAILY',
-      signature: 'GRANPA RAUL',
-      upVote: 4,
-      downVote: 1
-    })
-  ]
+  posts = []
+
+  comments = []
 
   socketData = []
 }

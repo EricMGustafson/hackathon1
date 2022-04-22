@@ -1,4 +1,7 @@
+/* eslint-disable no-console */
 import { ProxyState } from '../AppState.js'
+import { getPostForm } from '../Components/PostForm.js'
+import { commentsService } from '../Services/CommentsService.js'
 import { postsService } from '../Services/PostsService.js'
 
 async function _drawPosts() {
@@ -7,14 +10,19 @@ async function _drawPosts() {
   // eslint-disable-next-line no-return-assign
   posts.forEach(p => template += p.Template)
   document.getElementById('post-draw').innerHTML = template
+  document.getElementById('create-edit-form').innerHTML = getPostForm()
+}
+
+async function _drawAllComments(postId) {
+  // let template = ''
+  const comments = await ProxyState.comments.filter(c => c.postId === postId)
+  console.log(comments);
 }
 
 // async function _getControversial() {
 //   let totalVote = await ProxyState.posts
 //   console.log(totalVote, 'totalvotes');
-//   // let voteScore = 0 
-
-
+//   // let voteScore = 0
 // }
 
 export class PostsController {
@@ -23,7 +31,16 @@ export class PostsController {
     _drawPosts()
     this.getAllPosts()
     // _getControversial()
+    _drawAllComments()
+  }
 
+  async openModal(postId) {
+    try {
+      const postData = await ProxyState.posts.find(p => p.id === postId)
+      document.getElementById('create-edit-form').innerHTML = getPostForm(postData)
+    } catch (error) {
+      console.log('open modal error', error)
+    }
   }
 
   async getAllPosts() {
@@ -31,6 +48,14 @@ export class PostsController {
       await postsService.getAllPosts()
     } catch (error) {
       console.log('get all error', error)
+    }
+  }
+
+  async getAllComments() {
+    try {
+      await commentsService.getAllComments()
+    } catch (error) {
+      console.log('get all comments', error)
     }
   }
 
@@ -42,9 +67,25 @@ export class PostsController {
     }
   }
 
-  async editPost(postId, body) {
+  async handleSubmit(postId) {
     try {
-      await postsService.editPost(postId)
+      window.event.preventDefault()
+      /** @type {HTMLFormElement} */
+      // @ts-ignore
+      const formElem = window.event.target
+      const formData = {
+        // @ts-ignore
+        title: formElem.title.value,
+        body: formElem.body.value,
+        image: formElem.image.value,
+        signature: formElem.signature.value
+      }
+      if (postId === 'undefined') {
+        await postsService.createPost(formData)
+      } else {
+        formData.id = postId
+        await postsService.editPost(formData)
+      }
     } catch (error) {
       console.log('Edit Post error', error)
     }
