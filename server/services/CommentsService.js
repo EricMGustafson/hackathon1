@@ -1,6 +1,11 @@
 import { dbContext } from '../db/DbContext.js'
 import { BadRequest } from '../utils/Errors.js'
 class CommentsService {
+  async getAllComments() {
+    const comments = await dbContext.Comments.find({}).populate('creator')
+    return comments
+  }
+
   async editComment(editedComment) {
     const original = await this.getCommentById(editedComment.id)
     original.body = editedComment.body || original.body
