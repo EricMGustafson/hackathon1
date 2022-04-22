@@ -8,13 +8,16 @@
  */
 :root {
   --bs-primary: #bd5b4c;
-  --bs-secondary: #8392ab;
+  --bs-primaryDarken: #a33b2b;
+  --bs-secondary: #1f171c;
   --bs-danger: #ea0606;
   --bs-success: #00f867;
   --bs-warning: #fbcf33;
   --bs-info: #cb0c9f;
   --bs-dark: #111927;
-  --bs-grey: #cbcbcb;
+  --bs-grey: #888e8e;
+  --bs-teal: #009992;
+  --bs-tan: #ffce91;
   --bs-gray-100: #f8f9fa;
   --bs-gray-200: #e9ecef;
   --bs-gray-300: #dee2e6;
