@@ -17,4 +17,3 @@ PostSchema.virtual('creator', {
   foreignField: '_id',
   justOne: true
 })
-
