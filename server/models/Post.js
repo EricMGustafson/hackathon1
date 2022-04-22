@@ -8,8 +8,9 @@ export const PostSchema = new Schema({
   signature: { type: String, required: true, maxlength: 30, minlength: 5 },
   totalVotes: { type: Number },
   upVote: { type: Number },
-  downVote: { type: Number }
-})
+  downVote: { type: Number },
+  creatorId: { type: Schema.Types.ObjectId, ref: 'Account', required: true }
+}, { timestamps: true, toJSON: { virtuals: true } })
 
 PostSchema.virtual('creator', {
   localField: 'creatorId',
