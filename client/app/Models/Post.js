@@ -44,8 +44,15 @@ export class Post {
         <marquee direction="down" width="150" height="300" behavior="alternate">
   <marquee behavior="alternate">
         <h1><i class="mdi mdi-wrench selectable text-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="app.postsController.openModal('${this.id}')" ></i></h1>
+        </marquee>
+        </marquee>
+        <marquee direction="down" width="350" height="100" behavior="alternate">
+  <marquee behavior="alternate">
         <h1><i class="mdi mdi-plus selectable text-dark" data-bs-toggle="modal" data-bs-target="#comment-exampleModal" onclick="app.commentsController.openCommentModal('${this.id}')"></i></h1>
-      </div>
+        </marquee>
+        </marquee>
+        </div>
+      
       
       <div class="">
         <div class="collapse" id="collapseExample">
