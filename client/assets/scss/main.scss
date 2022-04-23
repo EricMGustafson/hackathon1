@@ -31,12 +31,31 @@ h3:hover {
 
 i {
   font-size: 4em;
+  transform: skew(30deg, 20deg);
+}
+
+img:hover {
+  transform: skew(30deg, 20deg);
 }
 
 main {
   flex-grow: 1;
 }
 
+.comment {
+  transform: matrix(1, 2, 3, 4, 5, 6);
+}
+
 .post-card {
   min-height: 75vh;
+}
+
+.post-img {
+  min-height: 50vh;
+  filter: hue-rotate(20deg);
+}
+
+.post-img:hover {
+  min-height: 50vh;
+  filter: hue-rotate(180deg);
 }
