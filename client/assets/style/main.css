@@ -14099,7 +14099,6 @@ body {
   display: inline-block;
   overflow-x: scroll;
   overflow-y: auto;
-  height: 80px;
   white-space: nowrap;
   max-height: 100vh;
 }
@@ -14121,7 +14120,7 @@ h3:hover, .h3:hover {
 }
 
 i {
-  font-size: 4em;
+  font-size: 1em;
   transform: skew(30deg, 20deg);
 }
 
@@ -14139,11 +14138,11 @@ main {
 }
 
 .comment {
-  transform: matrix(1, 2, 3, 4, 5, 6);
+  background-color: paleturquoise;
 }
 
 .post-card {
-  min-height: 75vh;
+  min-height: 30vh;
 }
 
 .post-img {
