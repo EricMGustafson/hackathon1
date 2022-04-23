@@ -33,17 +33,13 @@ export class Post {
         <h1><i class="mdi mdi-comment selectable text-dark"  data-bs-toggle="collapse" data-bs-target="#collapseExample" onclick="app.postsController.getAllComments('${this.id}')"></i></h1>
         <h1><i class="mdi mdi-delete selectable text-dark" onclick="app.postsController.deletePost('${this.id}')" ></i></h1>
         <h1><i class="mdi mdi-wrench selectable text-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="app.postsController.openModal('${this.id}')" ></i></h1>
+        <h1><i class="mdi mdi-plus selectable text-dark" data-bs-toggle="modal" data-bs-target="#comment-exampleModal" onclick="app.commentsController.openCommentModal('${this.id}')"></i></h1>
       </div>
       <div class="col-12">
         <div class="collapse" id="collapseExample">
           ${this.Comments}
         </div>
       </div>
-    </div>
-
-
-
-
-    `
+    </div>`
   }
 }
