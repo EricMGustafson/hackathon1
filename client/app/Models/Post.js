@@ -25,15 +25,30 @@ export class Post {
     <div class="row text-center shadow border border-dark post-card mt-3">
       <div class="col-12">
         <h3>${this.title}</h3>
+        <img src="${this.image}">
       </div>
       <div class="col-12">
         <h1>${this.body}</h1>
       </div>
       <div class="col-12">
+
+      <marquee direction="down" width="350" height="200" behavior="alternate">
+  <marquee behavior="alternate">
         <h1><i class="mdi mdi-comment selectable text-dark"  data-bs-toggle="collapse" data-bs-target="#collapseExample" onclick="app.postsController.getAllComments('${this.id}')"></i></h1>
+        </marquee>
+      </marquee>
+      <marquee direction="down" width="550" height="200" behavior="alternate">
+  <marquee behavior="alternate">
         <h1><i class="mdi mdi-delete selectable text-dark" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></h1>
+        </marquee>
+      </marquee>
+      <marquee direction="down" width="750" height="200" behavior="alternate">
+  <marquee behavior="alternate">
         <h1><i class="mdi mdi-wrench selectable text-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="app.postsController.openModal('${this.id}')" ></i></h1>
+      </marquee>
+      </marquee>
       </div>
+      
       <div class="col-12">
         <div class="collapse" id="collapseExample">
           ${this.Comments}
