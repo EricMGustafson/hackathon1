@@ -29,6 +29,10 @@ export function getPostForm(post) {
       <input id="signature" name="signature" type="text" class="form-control" aria-label="signature"
         aria-describedby="inputGroup-sizing-default" placeholder="Signature..." value="${post.signature}">
     </div>
+    <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
   </form>
   `
 }
