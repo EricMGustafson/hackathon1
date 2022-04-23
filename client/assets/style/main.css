@@ -14103,6 +14103,10 @@ body {
   max-height: 100vh;
 }
 
+h1, .h1 {
+  font-size: 1em;
+}
+
 h1:hover, .h1:hover {
   filter: blur(0.5rem);
 }
@@ -14120,7 +14124,13 @@ h3:hover, .h3:hover {
 }
 
 i {
-  font-size: 1em;
+  font-size: 3em;
+  transform: skew(30deg, 20deg);
+}
+
+i:hover {
+  font-size: 0.5em;
+  transition-duration: 1s;
   transform: skew(30deg, 20deg);
 }
 
