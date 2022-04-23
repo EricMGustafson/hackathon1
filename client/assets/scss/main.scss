@@ -11,10 +11,13 @@ body {
   font-family: 'Press Start 2P', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   display: inline-block;
-  overflow-x: scroll;
-  overflow-y: auto;
-  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: auto;
   max-height: 100vh;
+}
+
+h1 {
+  font-size: 1em;
 }
 
 h1:hover {
@@ -34,12 +37,19 @@ h3:hover {
 }
 
 i {
-  font-size: 1em;
+  font-size: 3em;
+  transform: skew(30deg, 20deg);
+}
+
+i:hover {
+  font-size: .5em;
+  transition-duration: 1s;
   transform: skew(30deg, 20deg);
 }
 
 img {
   transition-duration: 3s;
+  max-height: 10%;
 }
 
 img:hover {
@@ -47,9 +57,7 @@ img:hover {
   transform: skew(30deg, 20deg);
 }
 
-main {
-  flex-grow: 1;
-}
+main {}
 
 .comment {
   background-color: paleturquoise;
@@ -60,11 +68,10 @@ main {
 }
 
 .post-img {
-  min-height: 50vh;
   filter: hue-rotate(20deg);
+  max-height: 25%;
 }
 
 .post-img:hover {
-  min-height: 50vh;
   filter: hue-rotate(180deg);
 }
