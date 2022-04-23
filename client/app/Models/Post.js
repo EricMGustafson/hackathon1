@@ -31,17 +31,17 @@ export class Post {
         <h1>${this.body}</h1>
       </div>
       <div class="">
-      <marquee direction="down" width="350" height="300" behavior="alternate">
-  <marquee behavior="alternate">
+      <marquee direction="down" width="350" height="100" behavior="alternate">
+      <marquee behavior="alternate">
         <h1><i class="mdi mdi-comment selectable text-dark"  data-bs-toggle="collapse" data-bs-target="#collapseExample" onclick="app.postsController.getAllComments('${this.id}')"></i></h1>
         </marquee>
         </marquee>
-        <marquee direction="down" width="450" height="200" behavior="alternate">
+        <marquee direction="down" width="450" height="100" behavior="alternate">
   <marquee behavior="alternate">
         <h1><i class="mdi mdi-delete selectable text-dark" onclick="app.postsController.deletePost('${this.id}')" ></i></h1>
         </marquee>
         </marquee>
-        <marquee direction="down" width="150" height="300" behavior="alternate">
+        <marquee direction="down" width="150" height="100" behavior="alternate">
   <marquee behavior="alternate">
         <h1><i class="mdi mdi-wrench selectable text-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="app.postsController.openModal('${this.id}')" ></i></h1>
         </marquee>
@@ -52,8 +52,6 @@ export class Post {
         </marquee>
         </marquee>
         </div>
-      
-      
       <div class="">
         <div class="collapse" id="collapseExample">
           ${this.Comments}
