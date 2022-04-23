@@ -14097,9 +14097,8 @@ body {
   font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   display: inline-block;
-  overflow-x: scroll;
-  overflow-y: auto;
-  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: auto;
   max-height: 100vh;
 }
 
@@ -14136,15 +14135,12 @@ i:hover {
 
 img {
   transition-duration: 3s;
+  max-height: 10%;
 }
 
 img:hover {
   transition-duration: 3s;
   transform: skew(30deg, 20deg);
-}
-
-main {
-  flex-grow: 1;
 }
 
 .comment {
@@ -14156,12 +14152,11 @@ main {
 }
 
 .post-img {
-  min-height: 50vh;
   filter: hue-rotate(20deg);
+  max-height: 25%;
 }
 
 .post-img:hover {
-  min-height: 50vh;
   filter: hue-rotate(180deg);
 }
 
