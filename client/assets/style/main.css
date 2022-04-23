@@ -14093,10 +14093,15 @@ textarea.form-control-lg {
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   background-color: #e5e5e5;
   font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
+  display: inline-block;
+  overflow-x: scroll;
+  overflow-y: auto;
+  height: 80px;
+  white-space: nowrap;
+  max-height: 100vh;
 }
 
 h1:hover, .h1:hover {
@@ -14120,7 +14125,12 @@ i {
   transform: skew(30deg, 20deg);
 }
 
+img {
+  transition-duration: 3s;
+}
+
 img:hover {
+  transition-duration: 3s;
   transform: skew(30deg, 20deg);
 }
 
