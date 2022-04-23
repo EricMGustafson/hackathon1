@@ -27,7 +27,7 @@ export class CommentsController {
     }
   }
 
-  async handleSubmit(commentId) {
+  async handleSubmit(postId) {
     try {
       window.event.preventDefault()
       /** @type {HTMLFormElement} */
@@ -38,10 +38,10 @@ export class CommentsController {
         body: formElem.body.value,
         signature: formElem.signature.value
       }
-      if (commentId === 'undefined') {
-        await commentsService.createComment(formData)
+      if (postId === 'undefined') {
+        await commentsService.createComment(formData, postId)
       } else {
-        formData.id = commentId
+        formData.id = postId
         await commentsService.editComment(formData)
       }
     } catch (error) {

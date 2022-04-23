@@ -3,7 +3,9 @@ import { Comment } from '../Models/Comment.js'
 import { ProxyState } from '../AppState.js'
 
 class CommentsService {
-  async createComment(formData) {
+  async createComment(formData, postId) {
+    formData.postId = postId
+    debugger
     await api.post('api/comments', formData)
     ProxyState.comments = [...ProxyState.comments, new Comment(formData)]
   }

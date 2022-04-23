@@ -3,7 +3,7 @@ import { Comment } from '../Models/Comment.js'
 export function getCommentForm(comment) {
   comment = comment || new Comment({})
   return `
-  <form onsubmit="app.commentsController.updateComment('${comment.id}')">
+  <form onsubmit="app.commentsController.handleSubmit('${comment.postId}')">
     <div class="mb-3">
       <div>
         <label for="body" class="form-label">body</label>
