@@ -6,7 +6,7 @@ class PostsService {
     if (orginal.creatorId.toString() !== editedPost.creatorId) {
       throw new Forbidden('Not yours to edit')
     }
-    orginal.image = editedPost.image || 'thiscatdoesnotexist.com'
+    orginal.image = editedPost.image || 'https://thiscatdoesnotexist.com'
     orginal.title = editedPost.title || orginal.title
     orginal.body = editedPost.body || orginal.body
     orginal.image = editedPost.image || orginal.image

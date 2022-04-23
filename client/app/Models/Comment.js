@@ -8,7 +8,7 @@ export class Comment {
 
   get Template() {
     return `
-    <div class="card card-body" id="${this.id}">
+    <div class="card comment card-body" id="${this.id}">
       <div>${this.body}</div>
       <h3>${this.signature}</h3>
     </div>

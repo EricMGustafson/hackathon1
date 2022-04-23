@@ -7,14 +7,65 @@
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   background-color: $body-bg;
+  font-family: 'Press Start 2P', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  display: inline-block;
+  overflow-x: scroll;
+  overflow-y: auto;
+  height: 80px;
+  white-space: nowrap;
+  max-height: 100vh;
+}
+
+h1:hover {
+  filter: blur(.5rem);
+}
+
+h3:hover {
+  filter: blur(.5rem);
+}
+
+.head {
+  color: teal;
+}
+
+.head:hover {
+  filter: hue-rotate(90deg);
+}
+
+i {
+  font-size: 4em;
+  transform: skew(30deg, 20deg);
+}
+
+img {
+  transition-duration: 3s;
+}
+
+img:hover {
+  transition-duration: 3s;
+  transform: skew(30deg, 20deg);
 }
 
 main {
   flex-grow: 1;
 }
 
+.comment {
+  transform: matrix(1, 2, 3, 4, 5, 6);
+}
+
 .post-card {
   min-height: 75vh;
+}
+
+.post-img {
+  min-height: 50vh;
+  filter: hue-rotate(20deg);
+}
+
+.post-img:hover {
+  min-height: 50vh;
+  filter: hue-rotate(180deg);
 }
