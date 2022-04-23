@@ -1,3 +1,5 @@
+import { ProxyState } from '../AppState.js'
+
 export class Post {
   constructor(data) {
     this.title = data.title
@@ -8,6 +10,14 @@ export class Post {
     this.upVote = data.upVote
     this.downVote = data.downVote
     this.totalVotes = data.totalVotes
+  }
+
+  get Comments() {
+    const comments = ProxyState.comments.filter(c => c.postId === this.id)
+    let commentTemplate = ''
+    // eslint-disable-next-line no-return-assign
+    comments.forEach(c => commentTemplate += c.Template)
+    return commentTemplate
   }
 
   get Template() {
@@ -26,10 +36,7 @@ export class Post {
       </div>
       <div class="col-12">
         <div class="collapse" id="collapseExample">
-        <div class="card card-body" id="${this.id}">
-        <div>${this.body}</div>
-        <h3>${this.signature}</h3>
-      </div>
+          ${this.Comments}
         </div>
       </div>
     </div>

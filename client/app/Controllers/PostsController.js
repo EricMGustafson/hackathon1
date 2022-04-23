@@ -13,11 +13,11 @@ async function _drawPosts() {
   document.getElementById('create-edit-form').innerHTML = getPostForm()
 }
 
-async function _drawAllComments(postId) {
-  // let template = ''
-  const comments = await ProxyState.comments.filter(c => c.postId === postId)
-  console.log(comments);
-}
+// async function _drawAllComments(postId) {
+//   // let template = ''
+//   const comments = ProxyState.comments.filter(c => c.id === postId)
+//   console.log(comments, 'draw c')
+// }
 
 // async function _getControversial() {
 //   let totalVote = await ProxyState.posts
@@ -28,10 +28,10 @@ async function _drawAllComments(postId) {
 export class PostsController {
   constructor() {
     ProxyState.on('posts', _drawPosts)
+    // ProxyState.on('comments', _drawPosts)
     _drawPosts()
     this.getAllPosts()
     // _getControversial()
-    _drawAllComments()
   }
 
   async openModal(postId) {
