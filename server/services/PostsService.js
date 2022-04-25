@@ -17,7 +17,7 @@ class PostsService {
 
   async remove(id, userid) {
     const post = await this.getById(id)
-    if (post.creatorId.toString() !== userid) {
+    if (post.creatorId !== userid) {
       throw new Forbidden('Not yours to delete')
     }
     await dbContext.Posts.findByIdAndDelete(id)
